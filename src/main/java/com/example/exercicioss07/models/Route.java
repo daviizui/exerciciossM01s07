@@ -4,12 +4,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
 public class Route {
 
     @Getter
+    private static final List<Route> routes = new ArrayList<>();
     private static Long sequence = 1L;
 
     @Setter
@@ -20,6 +23,15 @@ public class Route {
 
     public Route(){
         this.setId(sequence++);
+    }
+
+    public Route(String description, String coveragerArea, BigDecimal percentualEficiencia) {
+    }
+
+
+    public static Route addRoute (Route route){
+        routes.add(route);
+        return route;
     }
 
 
