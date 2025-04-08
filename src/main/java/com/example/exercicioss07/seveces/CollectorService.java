@@ -16,4 +16,13 @@ public class CollectorService {
     public List<Collector> findAll(){
         return Collector.getCollectors();
     }
+
+    public Collector findById(Long id){
+        for (Collector collector : Collector.getCollectors()){
+            if (collector.getId().equals(id)){
+                return collector;
+            }
+        }
+        return null;
+    }
 }
